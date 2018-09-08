@@ -1,0 +1,46 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+    }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-spring'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+apply from: 'gradle/kotlin.gradle'
+apply from: 'gradle/test.gradle'
+
+group = 'de.roamingthings.workbench'
+version = '1.0.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    /****************************************
+     * Web
+     ****************************************/
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+
+    /****************************************
+     * Management and Monitoring
+     ****************************************/
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+
+    /****************************************
+     * Development Tools
+     ****************************************/
+    runtime('org.springframework.boot:spring-boot-devtools')
+}

@@ -1,0 +1,29 @@
+test {
+    useJUnitPlatform()
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+
+    // Turn on stdout and stderr for demonstration purpose
+    testLogging.showStandardStreams = true
+    testLogging.exceptionFormat = 'full'
+}
+
+dependencies {
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile("org.junit.jupiter:junit-jupiter-params:${junit5Version}")
+    testCompile("org.mockito:mockito-core:${mockitoVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junit5Version}")
+    testRuntimeOnly(
+            "org.junit.jupiter:junit-jupiter-engine:${junit5Version}",
+            "org.junit.vintage:junit-vintage-engine:${junit5Version}"
+    )
+
+    testCompile("org.seleniumhq.selenium:selenium-api:${seleniumVersion}")
+    testCompile("org.seleniumhq.selenium:selenium-remote-driver:${seleniumVersion}")
+    testCompile("org.seleniumhq.selenium:selenium-support:${seleniumVersion}")
+    testCompile("org.seleniumhq.selenium:selenium-java:${seleniumVersion}")
+    testCompile("org.testcontainers:testcontainers:${testcontainersVersion}")
+    testCompile("org.testcontainers:selenium:${testcontainersVersion}")
+}

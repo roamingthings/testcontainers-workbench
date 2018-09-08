@@ -1,0 +1,25 @@
+= Testcontainers Workbench
+
+This workbench demonstrates how to write UI tests for Spring Boot 2 applications
+using https://www.seleniumhq.org/[Selenium] and a headless Chrome, that is running in a container provided by the https://www.testcontainers.org/[Testcontainers] library.
+
+== ... what it's doing
+
+The Spring Boot 2 application itself consists of two pages. On the first page a name is entered into a form and
+ printed back on the second page.
+
+== ... how it's build
+
+The project is using https://gradle.org[Gradle] as build tool.
+
+== ... how it's run
+
+The application can be started by `./gradlew clean bootRun`. After the startup finished, the form can be accessed at `http://localhost:8080`.
+
+However since this workbench project is more about the test setup you will more likely run the tests. This can be
+accomplished by `./gradlew clean check`. For demonstration purpose the output of the test execution will be shown.
+
+After the test you will find a video showing the test.
+
+NOTE: Due to a bug in the current release of testcontainers the video of a successful test fill become the prefix
+`FAILED` while unsuccessful tests will be prefixed by `PASSED`.
