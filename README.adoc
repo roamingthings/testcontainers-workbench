@@ -14,6 +14,9 @@ The project is using https://gradle.org[Gradle] as build tool.
 
 == ... how it's run
 
+NOTE: Please note that the combination of testcontainers and Spring Boot 2 is not
+fully compatible with Java 9+ and will throw a `IllegalAccessException` at startup. However the test will still run.
+
 The application can be started by `./gradlew clean bootRun`. After the startup finished, the form can be accessed at `http://localhost:8080`.
 
 However since this workbench project is more about the test setup you will more likely run the tests. This can be
