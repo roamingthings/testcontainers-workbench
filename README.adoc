@@ -23,6 +23,3 @@ However since this workbench project is more about the test setup you will more 
 accomplished by `./gradlew clean check`. For demonstration purpose the output of the test execution will be shown.
 
 After the test you will find a video showing the test.
-
-NOTE: Due to a bug in the current release of testcontainers the video of a successful test fill become the prefix
-`FAILED` while unsuccessful tests will be prefixed by `PASSED`.
